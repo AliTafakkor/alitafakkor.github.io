@@ -308,8 +308,10 @@ a:hover small {
 }
 
 .wrapper {
-  width:960px;
+  width:1200px;
   margin:0 auto;
+  display: flex;
+  flex-direction: row;
 }
 
 blockquote {
@@ -368,12 +370,13 @@ img {
 }
 
 header {
-  width:232px;
-  float:left;
-  position:fixed;
+  flex: 0 0 260px;
+  /* width: 232px; */
+  position: relative;
   -webkit-font-smoothing:subpixel-antialiased;
   padding-top:4.0em;
-  text-align:center
+  text-align:center;
+  margin-right: 2rem;
 }
 
 
@@ -444,8 +447,8 @@ header ul a strong {
 }
 
 section {
-  width:650px;
-  float:right;
+  flex: 1 1 0%;
+  min-width: 0;
   padding-top:4.0em;
   padding-bottom:50px;
 }
