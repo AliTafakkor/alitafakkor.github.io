@@ -1,16 +1,25 @@
-<img src="/assets/img/OHBM2024.jpg" alt="OHBM2024" height="70" style="display: block; margin: 0 auto"/>
-### poster number 2023: Feasibility of Localizing Epileptogenic Tissue with Naturalistic Stimulation in fMRI
-**Authors:** <u>Ali Tafakkor</u>, Hana Abbas, Caroline Chadwick, Ali Khan, Ingrid Johnsrude
-[![pdf](/assets/img/pdf.png)](/assets/files/OHBM2024_Tafakkor.pdf)
+<table style="width:100%; border:0; border-collapse:collapse;">
+  <tr style="border:none;">
+    <td style="width:150px; border:none;">
+      <img src="/assets/img/ICAC2025.png" alt="ICAC2025"/>
+      <h3>Sept. 18th, ID: 21</h3>
+    </td>
+    <td style="vertical-align:middle; border:none;">
+      <h3>Probing Connectivity among Auditory Cortex Subdivisions and the Multiple Demand Network During Listening to Clear and Degraded Speech</h3>
+    </td> 
+  </tr>
+</table>
 
-Imagine a crowded theater where everyone is watching a movie together. For most people, their brains are in sync, reacting similarly to the exciting or emotional scenes on the screen. This shared experience is much like what happens in our brains when we watch a movie: specific areas light up in harmony, a phenomenon detectable through a brain imaging technique called fMRI.
+**Authors:** <u>Ali Tafakkor</u>, Madison Tutton, Aysha Motala, Björn Herrmann, Ingrid Johnsrude [![pdf](/assets/img/pdf.png)](/assets/files/ICAC2025_Tafakkor.pdf)
 
-Now, consider that one in 300 people in this theater may suffer from medication-resistant epilepsy. For these individuals, pinpointing the brain areas causing seizures is crucial. Surgery can help, but it often requires risky and expensive procedures.
+Imagine sitting in a bustling café, trying to follow a friend’s story while dozens of other voices overlap in the background. Your ears alone aren’t enough — your brain calls in extra support, engaging problem-solving and attention networks to keep track of the conversation.
 
-We're exploring if these synchronized brain patterns during movie watching can help locate epileptic tissue safely and cost-effectively. By comparing the brain activity of people with epilepsy to healthy individuals, we hope to detect differences and identify problem areas. This innovative approach could make epilepsy treatment safer and more accessible.
+In our study, we examined how the brain reconfigures its networks when listening conditions shift from clear to noisy. Using fMRI during naturalistic story listening with varying levels of background chatter, we measured functional connectivity (FC) between auditory cortex subdivisions and the Multiple Demand (MD) network.
 
-<iframe src="assets/files/OHBM2024_F1_L.html" width="310" height="230" frameBorder="0"></iframe>
-<iframe src="assets/files/OHBM2024_F1_R.html" width="310" height="230" frameBorder="0"></iframe>
+We found that:
 
-<iframe src="assets/files/OHBM2024_F2_L.html" width="310" height="230" frameBorder="0"></iframe>
-<iframe src="assets/files/OHBM2024_F2_R.html" width="310" height="230" frameBorder="0"></iframe>
+- Connectivity within MD regions increases as speech becomes harder to understand.
+- Connectivity within auditory cortex decreases, especially in primary auditory areas, under noisy conditions.
+- The right insula emerges as a key hub, bridging auditory and MD networks and adapting strongly to degraded speech.
+
+These results highlight how the brain flexibly balances auditory and cognitive systems to support speech comprehension in challenging environments — a dynamic that may inform interventions for hearing loss, aging, and other listening difficulties.
