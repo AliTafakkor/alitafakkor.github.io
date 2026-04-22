@@ -1,0 +1,49 @@
+# Publications & Presentations
+# Fields: year, title, authors, venue, badge, badge_color, links (optional list of {label, url})
+# badge_color: b-rose | b-plum | b-sky | b-gold
+
+- year: 2025
+  title: "Probing Connectivity among Auditory Cortex Subdivisions and the Multiple Demand Network During Listening to Clear and Degraded Speech"
+  authors: "Ali Tafakkor, Madison Tutton, Aysha Motala, Björn Herrmann, Ingrid Johnsrude"
+  me: "Ali Tafakkor"
+  venue: "International Conference on Auditory Cortex, 2025 · Session 21"
+  badge: "ICAC · Poster"
+  badge_color: b-plum
+  links:
+    - label: PDF
+      url: /assets/files/ICAC2025_Tafakkor.pdf
+
+- year: 2024
+  title: "Feasibility of Localizing Epileptogenic Tissue with Naturalistic Stimulation in fMRI"
+  authors: "Ali Tafakkor et al."
+  me: "Ali Tafakkor"
+  venue: "Organization of Human Brain Mapping, 2024"
+  badge: "OHBM · Poster"
+  badge_color: b-rose
+
+- year: 2024
+  title: "Dynamics of the Multiple Demand Network Connectivity Under Varied Speech to Noise Ratios"
+  authors: "Ali Tafakkor et al."
+  me: "Ali Tafakkor"
+  venue: "Cognitive Neuroscience Society, 2024"
+  badge: "CNS · Poster"
+  badge_color: b-sky
+
+- year: 2023
+  title: "Temporal Dynamics of Neural Sound Categorization"
+  authors: "Ali Tafakkor et al."
+  me: "Ali Tafakkor"
+  venue: "Organization of Human Brain Mapping, 2023"
+  badge: "OHBM · Poster"
+  badge_color: b-rose
+
+- year: 2023
+  title: "Temporal Dynamics of Natural Sound Categorization"
+  authors: "Ali Tafakkor"
+  me: "Ali Tafakkor"
+  venue: "M.Sc. Thesis · University of Western Ontario"
+  badge: "Thesis"
+  badge_color: b-gold
+  links:
+    - label: View
+      url: https://ir.lib.uwo.ca/etd/9452/
