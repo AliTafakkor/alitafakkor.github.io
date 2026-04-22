@@ -1,43 +1,40 @@
-# Basic Information 
-title: Ali Tafakkor
-position: Ph.D. Student in Neuroscience, Neuroscience M.Sc. 
+# ── Personal Info ─────────────────────────────────────────────────────────────
+title:       Ali Tafakkor
+position:    Ph.D. Student in Neuroscience
 affiliation: University of Western Ontario
-email: atafakko (at) uwo.ca
+affiliation_link: https://www.uwo.ca
+email:       atafakko@uwo.ca
 
-# Search Engine Optimization (SEO)
-# The following information is used to improve the website traffic from search engines, e.g., Google.
-keywords: minimal light
-description: The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.
-canonical: https://minimal-light-theme.yliu.me/
+# ── Social / Academic Links ───────────────────────────────────────────────────
+orcid:          0009-0006-7381-0647
+google_scholar: https://scholar.google.ca/citations?user=DjIWxUUAAAAJ&hl=en
+github:         https://github.com/AliTafakkor
+linkedin:       https://www.linkedin.com/in/alitafakkor
+twitter:        https://twitter.com/AliTafakkor
+bsky:           https://bsky.app/profile/alitafakkor.bsky.social
 
-# Links 
-# If you don't need one of them, you may delete the corresponding line.
-google_scholar: https://scholar.google.ca/citations?user=DjIWxUUAAAAJ&hl=en&oi=ao
-# cv_link: assets/files/curriculum_vitae.pdf
-github_link: https://github.com/AliTafakkor
-linkedin: https://www.linkedin.com/in/alitafakkor
-twitter: https://twitter.com/AliTafakkor
-bsky: https://bsky.app/profile/alitafakkor.bsky.social
+# ── Assets ────────────────────────────────────────────────────────────────────
+avatar:       /assets/img/headshot.JPG
+favicon:      /assets/img/favicon.png
+favicon_dark: /assets/img/favicon-dark.png
 
-# Images (e.g., your profile picture and your website's favicon) 
-# "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
-avatar: ./assets/img/headshot.jpg
-favicon: ./assets/img/favicon.png
-favicon_dark: ./assets/img/favicon-dark.png
+# ── SEO ───────────────────────────────────────────────────────────────────────
+description: >
+  Ph.D. student at Western University studying auditory neuroscience,
+  speech-in-noise, and functional connectivity using fMRI.
+keywords: neuroscience, fMRI, auditory cortex, speech, neuroimaging, Western University
 
-# Footnote
-# You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
-enable_footnote: false
-
-# Google Analytics ID
-# Please remove this if you don't use Google Analytics
+# ── Google Analytics ──────────────────────────────────────────────────────────
 google_analytics: UA-111540567-4
 
-# Use this project as a remote theme for GitHub Pages
-# See the guide here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
-remote_theme: yaoyao-liu/minimal-light
+# ── Build ─────────────────────────────────────────────────────────────────────
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "landing"
 
-# The following files will be removed from the generated website.
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -47,3 +44,4 @@ exclude:
   - README_de.md
   - LICENSE
   - minimal-light.gemspec
+  - node_modules
