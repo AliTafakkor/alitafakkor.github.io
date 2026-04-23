@@ -1,0 +1,38 @@
+# Projects
+# category: instruments | investigations
+# badge_color: any CSS color var token (sage, plum, rose, sky, gold)
+
+instruments:
+  - title: "Triton 🔱"
+    badge: "Open Source"
+    badge_color: plum
+    desc: >
+      A modular audio signal processing toolkit for speech-in-noise research.
+      Triton standardizes stimuli preparation and signal degradation with a
+      project-centric workflow — import, normalize, label, pipeline, and generate
+      babble noise, all reproducibly.
+    details: "Features: SNR-based noise mixing, spectrogram viewer, pipeline matrix sweeps, CLI + Streamlit GUI, sidecar provenance."
+    links:
+      - label: GitHub
+        url: https://github.com/AliTafakkor/triton
+        primary: true
+      - label: Docs
+        url: "#"
+
+investigations:
+  - title: "Auditory–MD Network Connectivity"
+    badge: "Ongoing Research"
+    badge_color: rose
+    desc: >
+      Using fMRI with naturalistic speech stories at varying SNRs to map how
+      auditory cortex and the Multiple Demand Network reconfigure under degraded
+      listening conditions.
+    details: >
+      The right insula emerges as a key hub — bridging auditory and cognitive
+      systems when speech becomes hard to follow.
+    links:
+      - label: View Poster
+        url: "#publications"
+        primary: true
+      - label: CoNCH Lab
+        url: https://www.conchlab.uwo.ca/

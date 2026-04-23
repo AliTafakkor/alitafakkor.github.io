@@ -1,0 +1,49 @@
+# News items — newest first
+# Fields: date (display string), text (HTML allowed), url (optional)
+
+- date: "Jul 2025"
+  text: >
+    Honored to receive the <a href="https://win.uwo.ca/open_science_at_the_win/open_science_awards.html">WIN Open Science Peer Support Award</a>
+    for contributions to open and collaborative research at Western University.
+
+- date: "May 2025"
+  text: >
+    Received an Erasmus+ grant to undertake a research exchange between the
+    <a href="https://win.uwo.ca/">WIN</a> and the
+    <a href="https://www.ru.nl/en/donders-institute">Donders Institute</a>
+    (Radboud University, Nijmegen), supporting international collaboration and training in neuroscience.
+
+- date: "Mar 2025"
+  text: >
+    Head organizer of <a href="https://brainhackwestern.github.io/">Brainhack Western 2025</a>,
+    fostering collaboration and innovation in neuroscience and open science.
+
+- date: "Jan 2025"
+  text: >
+    Started Ph.D. in the Neuroscience program at Western University in the
+    <a href="https://www.conchlab.uwo.ca/">CoNCH Lab</a> and
+    <a href="https://www.khanlab.ca/">Khan Lab</a>.
+
+- date: "Oct 2024"
+  text: >
+    Started role as computational server support staff at
+    <a href="https://brainscan.uwo.ca/research/cores/computational_core/">BrainsCAN Computational RIC</a>.
+
+- date: "Jun 2024"
+  text: >
+    Presented a poster on "Feasibility of Localizing Epileptogenic Tissue with Naturalistic Stimulation in fMRI"
+    at the Organization of Human Brain Mapping 2024 annual meeting.
+
+- date: "Apr 2024"
+  text: >
+    Presented a poster on "Dynamics of the Multiple Demand Network Connectivity Under Varied Speech to Noise Ratios"
+    at the Cognitive Neuroscience Society 2024 annual meeting.
+
+- date: "Sep 2023"
+  text: >
+    Began role as Research Technician at the CoNCH lab.
+
+- date: "Aug 2023"
+  text: >
+    Graduated with a Master's in Neuroscience from Western University.
+    <a href="https://ir.lib.uwo.ca/etd/9452/">View Thesis</a>.

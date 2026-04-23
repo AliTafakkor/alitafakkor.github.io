@@ -1,0 +1,10 @@
+# Hobbies & personal work — outside the lab
+# Fields: title, category (builds | photography | other), desc, image (optional URL), link (optional URL)
+
+- title: "Coming soon"
+  category: builds
+  desc: "Hobby projects and builds will go here."
+
+- title: "Coming soon"
+  category: photography
+  desc: "Photos will go here."
