@@ -4,6 +4,7 @@
 - title: "tmux Cheat Sheet"
   category: builds
   desc: "Comprehensive keyboard shortcut reference for tmux — sessions, windows, panes, copy mode, and power tips. Printable A4 layout."
+  image: /assets/img/tmux-preview.svg
   link: /tmux/
 
 - title: "Coming soon"
