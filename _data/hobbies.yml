@@ -1,9 +1,10 @@
 # Hobbies & personal work — outside the lab
 # Fields: title, category (builds | photography | other), desc, image (optional URL), link (optional URL)
 
-- title: "Coming soon"
+- title: "tmux Cheat Sheet"
   category: builds
-  desc: "Hobby projects and builds will go here."
+  desc: "Comprehensive keyboard shortcut reference for tmux — sessions, windows, panes, copy mode, and power tips. Printable A4 layout."
+  link: /tmux/
 
 - title: "Coming soon"
   category: photography

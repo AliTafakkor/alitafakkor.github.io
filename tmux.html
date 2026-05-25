@@ -1,0 +1,467 @@
+---
+layout: page
+title: "tmux Cheat Sheet"
+description: "Comprehensive tmux keyboard shortcut reference — sessions, windows, panes, copy mode, and power tips."
+permalink: /tmux/
+---
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+
+/* ── Design tokens ── */
+:root {
+  --sage:         #7a9e7e;
+  --sage-bg:      rgba(122,158,126,0.10);
+  --sage-border:  rgba(122,158,126,0.28);
+  --mono:         'JetBrains Mono', 'Cascadia Code', monospace;
+  --sans:         'Inter', system-ui, sans-serif;
+  --border:       rgba(0,0,0,0.08);
+  --border-md:    rgba(0,0,0,0.13);
+  --surface:      #f7f7f5;
+  --card-bg:      #ffffff;
+  --text-1:       #1c1c1c;
+  --text-2:       #545454;
+  --text-3:       #999;
+  --dot-green:    #7a9e7e;
+  --dot-blue:     #6e92b8;
+  --dot-amber:    #c9a056;
+  --dot-purple:   #9e82c6;
+  --dot-teal:     #5bada0;
+  --dot-gold:     #c9a056;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sage:        #8fba93;
+    --sage-bg:     rgba(143,186,147,0.10);
+    --sage-border: rgba(143,186,147,0.25);
+    --border:      rgba(255,255,255,0.08);
+    --border-md:   rgba(255,255,255,0.14);
+    --surface:     #1e1e1e;
+    --card-bg:     #252525;
+    --text-1:      #e6e6e6;
+    --text-2:      #aaa;
+    --text-3:      #666;
+  }
+}
+
+/* ════════════════════════════════
+   Screen styles
+   ════════════════════════════════ */
+.cs { font-family: var(--sans); color: var(--text-1); }
+
+.cs-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between; flex-wrap: wrap;
+  gap: 1rem; margin-bottom: 1.75rem;
+  padding-bottom: 1.1rem; border-bottom: 1px solid var(--border-md);
+}
+.cs-title {
+  font-family: var(--mono); font-size: 1.7rem;
+  font-weight: 500; letter-spacing: -.02em;
+  color: var(--text-1); margin: 0 0 3px;
+}
+.cs-subtitle { font-size: .85rem; color: var(--text-2); margin: 0; }
+
+.prefix-pill {
+  font-family: var(--mono); font-size: .78rem; font-weight: 500;
+  padding: 6px 15px; background: var(--sage-bg);
+  color: var(--sage); border: 1px solid var(--sage-border);
+  border-radius: 7px; text-align: center; line-height: 1.5;
+}
+.prefix-pill small {
+  display: block; font-size: .65rem; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--text-3);
+  font-weight: 400; margin-bottom: 2px;
+}
+
+.cs-section {
+  font-size: .68rem; font-weight: 600; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--text-3);
+  margin: 1.75rem 0 .9rem; display: flex;
+  align-items: center; gap: 9px;
+}
+.cs-section::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.cs-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 9px; overflow: hidden;
+}
+
+.cs-card-head {
+  display: flex; align-items: center; gap: 7px;
+  padding: 8px 13px; border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.cs-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.cs-card-title {
+  font-size: .67rem; font-weight: 600;
+  letter-spacing: .09em; text-transform: uppercase; color: var(--text-2);
+}
+
+.cs-table { width: 100%; border-collapse: collapse; }
+.cs-table tr:last-child td { border-bottom: none; }
+.cs-table td {
+  padding: 6px 13px; font-size: .8rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle; color: var(--text-2); line-height: 1.4;
+}
+.cs-table td:first-child {
+  font-family: var(--mono); font-size: .73rem;
+  color: var(--text-1); white-space: nowrap;
+  width: 46%; padding-right: 6px;
+}
+
+.k {
+  display: inline-block; font-family: var(--mono);
+  font-size: .69rem; font-weight: 500;
+  padding: 1px 5px; border-radius: 3px;
+  line-height: 1.7; white-space: nowrap;
+}
+.kd { background: #1a1a2e; color: #7dd3fc; border: 1px solid #2a3850; }
+.kl {
+  background: var(--surface); color: var(--text-1);
+  border: 1px solid var(--border-md);
+}
+.sep { color: var(--text-3); font-size: .65rem; margin: 0 1px; }
+
+.cs-tips {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 9px; padding: .9rem 1rem; margin-top: 12px;
+}
+.cs-tips-head {
+  font-size: .67rem; font-weight: 600; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--text-2); margin-bottom: 9px;
+}
+.cs-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 8px;
+}
+.cs-tip {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 6px; padding: 8px 11px; font-size: .78rem;
+  color: var(--text-2); display: flex; gap: 7px;
+  align-items: flex-start; line-height: 1.5;
+}
+.cs-tip strong { color: var(--text-1); font-weight: 500; }
+code.ic {
+  font-family: var(--mono); font-size: .7rem;
+  background: var(--surface); border: 1px solid var(--border-md);
+  padding: 1px 4px; border-radius: 3px; color: var(--text-1);
+}
+
+.cs-footer {
+  margin-top: 1.6rem; padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono); font-size: .72rem; color: var(--text-3);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 5px;
+}
+
+/* ════════════════════════════════
+   Print styles — A4 single page
+   ════════════════════════════════ */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 11mm;
+  }
+
+  /* hide site chrome */
+  .page-nav, .page-breadcrumb { display: none !important; }
+  body, html { background: white !important; }
+
+  /* reset dark-mode tokens for print */
+  :root {
+    --sage:        #5a8a5e;
+    --sage-bg:     #f0f5f0;
+    --sage-border: #c0d8c2;
+    --border:      #e0e0e0;
+    --border-md:   #ccc;
+    --surface:     #f5f5f4;
+    --card-bg:     #ffffff;
+    --text-1:      #111;
+    --text-2:      #444;
+    --text-3:      #888;
+  }
+
+  .cs { font-family: var(--sans); font-size: 7pt; }
+
+  /* ── Header strip ── */
+  .cs-header {
+    margin-bottom: 5pt; padding-bottom: 5pt;
+    border-bottom: 0.5pt solid #ccc;
+    align-items: center;
+  }
+  .cs-title { font-size: 13pt; margin: 0; }
+  .cs-subtitle { font-size: 6.5pt; }
+  .prefix-pill { font-size: 6.5pt; padding: 4pt 10pt; }
+  .prefix-pill small { font-size: 5.5pt; }
+
+  /* ── Section labels ── */
+  .cs-section { font-size: 5.5pt; margin: 5pt 0 4pt; letter-spacing: .08em; }
+
+  /* ── Force 3-column grid ── */
+  .cs-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 5pt !important;
+  }
+
+  /* hide the scripting card in print (merged into command card below) */
+  .cs-card.print-hide { display: none !important; }
+
+  /* ── Cards ── */
+  .cs-card {
+    border: 0.5pt solid #d5d5d5;
+    border-radius: 4pt;
+    break-inside: avoid;
+  }
+  .cs-card-head {
+    padding: 3pt 6pt;
+    border-bottom: 0.5pt solid #e0e0e0;
+    background: #f5f5f4;
+  }
+  .cs-dot { width: 5pt; height: 5pt; }
+  .cs-card-title { font-size: 5.5pt; letter-spacing: .07em; }
+
+  /* ── Table rows ── */
+  .cs-table td {
+    padding: 2.2pt 6pt; font-size: 6.5pt;
+    border-bottom: 0.4pt solid #ebebeb;
+    line-height: 1.3;
+  }
+  .cs-table td:first-child { font-size: 6pt; width: 47%; }
+
+  /* ── Keys ── */
+  .k { font-size: 5.8pt; padding: 0.5pt 3.5pt; border-radius: 2pt; }
+  .kd { background: #1a1a2e; color: #7dd3fc; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .kl { background: #f0f0ee; color: #111; border-color: #ccc; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* ── Tips ── */
+  .cs-tips {
+    padding: 5pt 7pt; margin-top: 5pt;
+    border: 0.5pt solid #d5d5d5; border-radius: 4pt;
+  }
+  .cs-tips-head { font-size: 5.5pt; margin-bottom: 4pt; }
+  .cs-tips-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 4pt !important;
+  }
+  .cs-tip {
+    padding: 3pt 5pt; font-size: 6.2pt; gap: 4pt;
+    border: 0.4pt solid #e0e0e0; border-radius: 3pt;
+    background: #f7f7f5;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  /* ── Footer ── */
+  .cs-footer { margin-top: 5pt; padding-top: 4pt; font-size: 6pt; }
+}
+</style>
+
+<div class="cs">
+
+<!-- ── Header ── -->
+<div class="cs-header">
+  <div>
+    <h1 class="cs-title">tmux</h1>
+    <p class="cs-subtitle">Terminal multiplexer — sessions, windows, panes &amp; copy mode</p>
+  </div>
+  <div class="prefix-pill">
+    <small>default prefix</small>
+    Ctrl + b
+  </div>
+</div>
+
+<!-- ══════════════════════
+     Row 1: Sessions | Panes | Copy mode
+══════════════════════ -->
+<div class="cs-section">Core concepts</div>
+<div class="cs-grid">
+
+  <!-- Sessions -->
+  <div class="cs-card">
+    <div class="cs-card-head">
+      <div class="cs-dot" style="background:var(--dot-green)"></div>
+      <span class="cs-card-title">Sessions</span>
+    </div>
+    <table class="cs-table">
+      <tr><td><span class="k kd">$ tmux</span></td><td>Start new session</td></tr>
+      <tr><td><span class="k kd">$ tmux new -s name</span></td><td>New named session</td></tr>
+      <tr><td><span class="k kd">$ tmux ls</span></td><td>List sessions</td></tr>
+      <tr><td><span class="k kd">$ tmux attach</span></td><td>Attach to last session</td></tr>
+      <tr><td><span class="k kd">$ tmux a -t name</span></td><td>Attach to named session</td></tr>
+      <tr><td><span class="k kd">$ tmux kill-session -t name</span></td><td>Kill named session</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">d</span></td><td>Detach from session</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">s</span></td><td>List &amp; switch sessions</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">$</span></td><td>Rename current session</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">( )</span></td><td>Previous / next session</td></tr>
+    </table>
+  </div>
+
+  <!-- Panes -->
+  <div class="cs-card">
+    <div class="cs-card-head">
+      <div class="cs-dot" style="background:var(--dot-amber)"></div>
+      <span class="cs-card-title">Panes (splits)</span>
+    </div>
+    <table class="cs-table">
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">%</span></td><td>Split pane vertically</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">"</span></td><td>Split pane horizontally</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">← → ↑ ↓</span></td><td>Navigate panes</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">o</span></td><td>Cycle through panes</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">;</span></td><td>Last active pane</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">x</span></td><td>Kill current pane</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">z</span></td><td>Toggle zoom (fullscreen)</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">!</span></td><td>Break pane → new window</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">q</span></td><td>Show pane numbers</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">q 0–9</span></td><td>Jump to pane #</td></tr>
+    </table>
+  </div>
+
+  <!-- Copy mode -->
+  <div class="cs-card">
+    <div class="cs-card-head">
+      <div class="cs-dot" style="background:var(--dot-teal)"></div>
+      <span class="cs-card-title">Copy mode (vi)</span>
+    </div>
+    <table class="cs-table">
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">[</span></td><td>Enter copy mode</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">]</span></td><td>Paste buffer</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">PgUp</span></td><td>Enter scroll mode</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">=</span></td><td>List paste buffers</td></tr>
+      <tr><td><span class="k kl">Space</span></td><td>Start selection</td></tr>
+      <tr><td><span class="k kl">Enter</span></td><td>Copy selection &amp; exit</td></tr>
+      <tr><td><span class="k kl">q / Esc</span></td><td>Exit copy mode</td></tr>
+      <tr><td><span class="k kl">h j k l</span></td><td>Move cursor</td></tr>
+      <tr><td><span class="k kl">w / b</span></td><td>Forward / back word</td></tr>
+      <tr><td><span class="k kl">g / G</span></td><td>Top / bottom of history</td></tr>
+      <tr><td><span class="k kl">/</span></td><td>Search forward</td></tr>
+      <tr><td><span class="k kl">?</span></td><td>Search backward</td></tr>
+      <tr><td><span class="k kl">n / N</span></td><td>Next / prev match</td></tr>
+      <tr><td><span class="k kl">Ctrl+u / d</span></td><td>Scroll half page up/down</td></tr>
+    </table>
+  </div>
+
+</div><!-- /row 1 -->
+
+<!-- ══════════════════════
+     Row 2: Windows | Resize | Command & CLI
+══════════════════════ -->
+<div class="cs-section" style="margin-top:.9rem">Windows, resizing &amp; config</div>
+<div class="cs-grid">
+
+  <!-- Windows -->
+  <div class="cs-card">
+    <div class="cs-card-head">
+      <div class="cs-dot" style="background:var(--dot-blue)"></div>
+      <span class="cs-card-title">Windows (tabs)</span>
+    </div>
+    <table class="cs-table">
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">c</span></td><td>Create new window</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">,</span></td><td>Rename current window</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">w</span></td><td>List &amp; switch windows</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">n</span></td><td>Next window</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">p</span></td><td>Previous window</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">0–9</span></td><td>Switch to window #</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">&amp;</span></td><td>Kill current window</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">l</span></td><td>Last (previous) window</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">f</span></td><td>Find window by name</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">.</span></td><td>Move window to index #</td></tr>
+    </table>
+  </div>
+
+  <!-- Resize -->
+  <div class="cs-card">
+    <div class="cs-card-head">
+      <div class="cs-dot" style="background:var(--dot-purple)"></div>
+      <span class="cs-card-title">Pane resizing</span>
+    </div>
+    <table class="cs-table">
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">Ctrl+←</span></td><td>Resize left</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">Ctrl+→</span></td><td>Resize right</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">Ctrl+↑</span></td><td>Resize up</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">Ctrl+↓</span></td><td>Resize down</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">Alt+←</span></td><td>Resize left ×5</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">Alt+→</span></td><td>Resize right ×5</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">Alt+↑</span></td><td>Resize up ×5</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">Alt+↓</span></td><td>Resize down ×5</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">Space</span></td><td>Cycle pane layouts</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">Alt+1–5</span></td><td>Set preset layout #</td></tr>
+    </table>
+  </div>
+
+  <!-- Command & CLI (merged) -->
+  <div class="cs-card">
+    <div class="cs-card-head">
+      <div class="cs-dot" style="background:var(--dot-gold)"></div>
+      <span class="cs-card-title">Command &amp; config</span>
+    </div>
+    <table class="cs-table">
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">:</span></td><td>Open command prompt</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">?</span></td><td>Show all key bindings</td></tr>
+      <tr><td><span class="k kl">prefix</span><span class="sep">›</span><span class="k kl">t</span></td><td>Show clock</td></tr>
+      <tr><td><span class="k kd">:source ~/.tmux.conf</span></td><td>Reload config</td></tr>
+      <tr><td><span class="k kd">:set -g prefix C-a</span></td><td>Change prefix key</td></tr>
+      <tr><td><span class="k kd">:set -g mouse on</span></td><td>Enable mouse support</td></tr>
+      <tr><td><span class="k kd">:set -g history-limit N</span></td><td>Set scrollback size</td></tr>
+      <tr><td><span class="k kd">:setw synchronize-panes on</span></td><td>Type in all panes</td></tr>
+      <tr><td><span class="k kd">$ tmux new-session -d -s bg</span></td><td>Detached background session</td></tr>
+      <tr><td><span class="k kd">$ tmux send-keys -t s "cmd" Enter</span></td><td>Run cmd in session</td></tr>
+    </table>
+  </div>
+
+</div><!-- /row 2 -->
+
+<!-- ══════════════════════
+     Tips
+══════════════════════ -->
+<div class="cs-section" style="margin-top:.9rem">Power tips</div>
+
+<div class="cs-tips">
+  <div class="cs-tips-head">Pro tips</div>
+  <div class="cs-tips-grid">
+    <div class="cs-tip">
+      <span>⚡</span>
+      <span><strong>Persistent sessions</strong> — tmux survives terminal closes. Detach <span class="k kl" style="font-size:.66rem">prefix d</span>, reattach <span class="k kd" style="font-size:.66rem">tmux a</span>.</span>
+    </div>
+    <div class="cs-tip">
+      <span>🖱️</span>
+      <span><strong>Mouse support</strong> — Add <code class="ic">set -g mouse on</code> to <code class="ic">~/.tmux.conf</code> for click-to-focus and drag-to-resize.</span>
+    </div>
+    <div class="cs-tip">
+      <span>🎨</span>
+      <span><strong>Remap prefix</strong> — Many prefer <span class="k kl" style="font-size:.66rem">Ctrl+a</span>. Set with <code class="ic">set -g prefix C-a</code> + <code class="ic">unbind C-b</code>.</span>
+    </div>
+    <div class="cs-tip">
+      <span>📋</span>
+      <span><strong>Vi copy mode</strong> — Add <code class="ic">setw -g mode-keys vi</code> for hjkl &amp; search navigation inside copy mode.</span>
+    </div>
+    <div class="cs-tip">
+      <span>🔄</span>
+      <span><strong>Session managers</strong> — <strong>tmuxinator</strong> and <strong>tmux-resurrect</strong> save &amp; restore full session layouts automatically.</span>
+    </div>
+    <div class="cs-tip">
+      <span>📁</span>
+      <span><strong>Scripting</strong> — Use <code class="ic">tmux send-keys</code>, <code class="ic">split-window</code>, and <code class="ic">select-pane</code> in shell scripts to build repeatable workspaces.</span>
+    </div>
+  </div>
+</div>
+
+<div class="cs-footer">
+  <span>prefix = Ctrl+b &nbsp;·&nbsp; press prefix, release, then the key</span>
+  <span>tmux 3.x</span>
+</div>
+
+</div><!-- /.cs -->
