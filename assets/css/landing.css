@@ -386,6 +386,14 @@ section { padding: clamp(80px,12vh,160px) clamp(20px,8vw,120px); }
   display: flex; align-items: center; justify-content: center;
   color: var(--text-dim);
 }
+.hobby-img--video {
+  overflow: hidden;
+  background-color: #fbf8f1;
+}
+.hobby-img--video video {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  opacity: 0.25;
+}
 .hobby-info { padding: 20px 22px; }
 .hobby-cat {
   font: 600 10px var(--sans);

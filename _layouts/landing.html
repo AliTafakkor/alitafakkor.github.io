@@ -212,7 +212,13 @@
     <div class="hobby-grid">
       {% for item in site.data.hobbies %}
       <div class="hobby-card reveal">
-        {% if item.image %}
+        {% if item.video %}
+        <div class="hobby-img hobby-img--video">
+          <video autoplay loop muted playsinline>
+            <source src="{{ item.video }}" type="video/mp4">
+          </video>
+        </div>
+        {% elsif item.image %}
         <div class="hobby-img" style="background-image:url('{{ item.image }}')"></div>
         {% else %}
         <div class="hobby-img hobby-img--empty">
