@@ -17,7 +17,7 @@ instruments:
         url: https://github.com/AliTafakkor/triton
         primary: true
       - label: Docs
-        url: "#"
+        url: https://alitafakkor.me/triton
 
 investigations:
   - title: "Auditory–MD Network Connectivity"
