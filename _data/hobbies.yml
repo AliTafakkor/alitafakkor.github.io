@@ -7,11 +7,11 @@
   image: /assets/img/tmux-preview.svg
   link: /tmux/
 
-- title: "Kohan-nameh"
+- title: "Yad-nameh"
   category: builds
   desc: "A daily journaling app that transforms your writing into verse styled after Ferdowsi's Shahnameh — built with Google AI Studio."
   video: /assets/video/kohan-preview.mp4
-  link: https://kohan-nameh-207717777192.us-west2.run.app
+  link: https://yad-nameh-207717777192.us-west2.run.app
 
 - title: "Coming soon"
   category: photography
