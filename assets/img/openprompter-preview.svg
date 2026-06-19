@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 180">
+  <rect width="340" height="180" fill="#0d0d12"/>
+
+  <rect width="340" height="26" fill="#141420"/>
+  <circle cx="14" cy="13" r="4" fill="#ff5f57"/>
+  <circle cx="26" cy="13" r="4" fill="#febc2e"/>
+  <circle cx="38" cy="13" r="4" fill="#28c840"/>
+  <text x="168" y="17" font-family="monospace" font-size="8.5" fill="#94a3b8" text-anchor="middle" letter-spacing="0.1em">OPENPROMPTER</text>
+  <rect x="284" y="7" width="44" height="12" rx="3" fill="#0f2a24" stroke="#1d5c4a" stroke-width="0.8"/>
+  <text x="306" y="16.5" font-family="monospace" font-size="7" fill="#5bada0" text-anchor="middle" letter-spacing="0.06em">MIRROR ON</text>
+
+  <rect x="322" y="32" width="10" height="120" rx="4" fill="#1a1a24"/>
+  <rect x="322" y="76" width="10" height="42" rx="4" fill="#1d9e75" opacity="0.55"/>
+  <text x="327" y="69" font-family="monospace" font-size="7" fill="#5bada0" text-anchor="middle">▲</text>
+  <text x="327" y="162" font-family="monospace" font-size="6.5" fill="#2d5c50" text-anchor="middle">1.2×</text>
+
+  <rect x="0" y="81" width="316" height="20" fill="#1d9e75" opacity="0.09"/>
+  <rect x="0" y="81" width="3" height="20" fill="#1d9e75" opacity="0.9"/>
+  <line x1="3" y1="81" x2="316" y2="81" stroke="#1d9e75" stroke-width="0.7" opacity="0.35"/>
+  <line x1="3" y1="101" x2="316" y2="101" stroke="#1d9e75" stroke-width="0.7" opacity="0.35"/>
+
+  <text x="158" y="46" font-family="monospace" font-size="9" fill="#e2e8f0" opacity="0.15" text-anchor="middle">and in the spaces between silence,</text>
+  <text x="158" y="60" font-family="monospace" font-size="9" fill="#e2e8f0" opacity="0.30" text-anchor="middle">we find the words that carry weight —</text>
+  <text x="158" y="74" font-family="monospace" font-size="9" fill="#e2e8f0" opacity="0.55" text-anchor="middle">the kind that shape a room,</text>
+
+  <text x="158" y="94.5" font-family="monospace" font-size="9.5" fill="#ffffff" text-anchor="middle">before a single sound is made.</text>
+
+  <text x="158" y="113" font-family="monospace" font-size="9" fill="#e2e8f0" opacity="0.55" text-anchor="middle">this is where the voice begins</text>
+  <text x="158" y="127" font-family="monospace" font-size="9" fill="#e2e8f0" opacity="0.30" text-anchor="middle">its quiet and deliberate work —</text>
+  <text x="158" y="141" font-family="monospace" font-size="9" fill="#e2e8f0" opacity="0.15" text-anchor="middle">finding rhythm, finding breath.</text>
+
+  <rect y="154" width="340" height="26" fill="#141420"/>
+  <rect x="13" y="161" width="4" height="12" rx="1" fill="#5bada0"/>
+  <rect x="20" y="161" width="4" height="12" rx="1" fill="#5bada0"/>
+  <text x="34" y="170" font-family="monospace" font-size="7.5" fill="#4a5568">SPEED</text>
+  <text x="68" y="170" font-family="monospace" font-size="7.5" fill="#5bada0">1.2×</text>
+  <rect x="90" y="160" width="34" height="11" rx="2.5" fill="#1d9e75" opacity="0.2"/>
+  <text x="107" y="168.5" font-family="monospace" font-size="7" fill="#5bada0" text-anchor="middle">AUTO</text>
+  <text x="216" y="170" font-family="monospace" font-size="7" fill="#2d3748">smooth scroll  ·  .docx  ·  fullscreen</text>
+</svg>

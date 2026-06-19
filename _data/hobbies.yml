@@ -13,6 +13,12 @@
   video: /assets/video/kohan-preview.mp4
   link: https://yad-nameh-207717777192.us-west2.run.app
 
+- title: "OpenPrompter"
+  category: builds
+  desc: "A free, browser-based teleprompter — supports .txt, .md, and .docx, mirror mode, remote clicker mapping, and adjustable auto-scroll speed."
+  image: /assets/img/openprompter-preview.svg
+  link: https://alitafakkor.github.io/openprompter
+
 - title: "Coming soon"
   category: photography
   desc: "Photos will go here."
