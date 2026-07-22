@@ -21,19 +21,6 @@ instruments:
         url: https://alitafakkor.me/triton
 
 investigations:
-  - title: "Eplink"
-    badge: "Collaboration"
-    badge_color: sky
-    desc: >
-      A Snakemake/Snakebids pipeline for preprocessing and analyzing epilepsy fMRI data.
-      Runs end-to-end from raw BIDS input through fMRIprep, FreeSurfer surface extraction,
-      fsLR 32k projection, and inter-subject correlation (ISC) analysis across four parcellation atlases.
-    details: "Scales to 100 concurrent SLURM jobs on the Alliance Canada cluster. Supports Desikan, Glasser, Schaefer, and Yan atlases."
-    links:
-      - label: GitHub
-        url: https://github.com/CoNCHLab-Github/Eplink
-        primary: true
-
   - title: "Auditory–MD Network Connectivity"
     badge: "Ongoing Research"
     badge_color: rose
@@ -50,3 +37,16 @@ investigations:
         primary: true
       - label: CoNCH Lab
         url: https://www.conchlab.uwo.ca/
+
+  - title: "Eplink"
+    badge: "Collaboration"
+    badge_color: sky
+    desc: >
+      A Snakemake/Snakebids pipeline for preprocessing and analyzing epilepsy fMRI data.
+      Runs end-to-end from raw BIDS input through fMRIprep, FreeSurfer surface extraction,
+      fsLR 32k projection, and inter-subject correlation (ISC) analysis across four parcellation atlases.
+    details: "Scales to 100 concurrent SLURM jobs on the Alliance Canada cluster. Supports Desikan, Glasser, Schaefer, and Yan atlases."
+    links:
+      - label: GitHub
+        url: https://github.com/CoNCHLab-Github/Eplink
+        primary: true
