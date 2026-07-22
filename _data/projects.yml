@@ -19,6 +19,7 @@ instruments:
       - label: Docs
         url: https://alitafakkor.me/triton
 
+investigations:
   - title: "Eplink"
     badge: "Collaboration"
     badge_color: sky
@@ -32,7 +33,6 @@ instruments:
         url: https://github.com/CoNCHLab-Github/Eplink
         primary: true
 
-investigations:
   - title: "Auditory–MD Network Connectivity"
     badge: "Ongoing Research"
     badge_color: rose
