@@ -7,11 +7,11 @@ instruments:
     badge: "Open Source"
     badge_color: plum
     desc: >
-      An audio signal processing toolkit for communication and hearing research.
+      An audio signal processing toolkit for hearing and communication research.
       Triton organizes stimulus preparation around a project-centric workflow — import and
-      auto-normalize audio, apply multi-label categorization, generate babble noise from
-      talker groups, add noise at a target SNR, and sweep processing parameters across
-      files using a reproducible pipeline matrix. Every step is logged with JSON sidecar provenance.
+      auto-normalize audio, apply multi-label categorization, build reproducible processing
+      pipelines with parameter sweeps, and generate or degrade stimuli with precise control
+      over level, noise, and envelope shape. Every step is logged with JSON sidecar provenance.
     details: "Interfaces: Streamlit GUI · CLI · Python API. Audio ops: SNR mixing, 4 ramp envelopes (linear/exp/log/cosine), RMS normalization. Visualization: STFT, Mel, and CQT spectrograms. Stack: Python + FFmpeg + librosa, env-locked with Pixi. MIT licensed."
     links:
       - label: GitHub
